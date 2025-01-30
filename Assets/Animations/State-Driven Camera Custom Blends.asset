@@ -24,8 +24,8 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 4
-  - From: Run Camera
-    To: Climbing Camera
+  - From: Idle Camera
+    To: Run Camera
     Blend:
       Style: 2
       Time: 3
@@ -46,7 +46,7 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 4
-  - From: '**ANY CAMERA**'
+  - From: Climbing Camera
     To: '**ANY CAMERA**'
     Blend:
       Style: 2

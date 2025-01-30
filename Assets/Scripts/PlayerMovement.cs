@@ -1,17 +1,21 @@
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections; // Để sử dụng Coroutine
+
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     Vector2 moveInput;
     Rigidbody2D rigidbody2d;
     [SerializeField] float speed = 5;
     [SerializeField] float jumpForce = 5;
     [SerializeField] float climbSpeed = 5;
+    [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
     Animator animator;
     CapsuleCollider2D capsuleCollider2D;
     BoxCollider2D myFeetCollider;
+    GameManager gameManager;
+
+    bool isAlive = true;
 
     float gravityScaleAtStart;
     void Start()
@@ -22,35 +26,67 @@ public class PlayerMovement : MonoBehaviour
         gravityScaleAtStart = rigidbody2d.gravityScale;
         myFeetCollider = GetComponent<BoxCollider2D>();
 
+        if (gameManager == null)
+        {
+            gameManager = FindObjectOfType<GameManager>();
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (!isAlive) { return; }
         Run();
         ClimbLadder();
         SlipSprite();
-
+        Die();
     }
 
     void OnMove(InputValue value)
     {
+        if (!isAlive) { return; }
+
         moveInput = value.Get<Vector2>();
-        //Debug.Log(moveInput);
         animator.SetBool("isRunning", true);
     }
 
     void OnJump(InputValue value)
     {
+        if (!isAlive) { return; }
+
         if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
         if (value.isPressed)
         {
             rigidbody2d.linearVelocity = new Vector2(rigidbody2d.linearVelocity.x, jumpForce);
-
-            //Debug.Log("Jump");
         }
-
     }
+
+    void Die()
+    {
+        if (capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazard")))
+        {
+            Debug.Log("Player Died");
+            isAlive = false;
+            animator.SetTrigger("isDying"); // Bắt đầu animation "isDying"
+            rigidbody2d.linearVelocity = deathKick;
+
+            // Chờ cho animation "isDying" hoàn thành trước khi game over
+            StartCoroutine(PlayDeathAnimationAndShowGameOver());
+        }
+    }
+
+    private IEnumerator PlayDeathAnimationAndShowGameOver()
+    {
+        // Đợi animation "isDying" hoàn thành (giả sử animation có thời gian dài 2 giây)
+        float animationDuration = animator.GetCurrentAnimatorStateInfo(0).length;
+
+        // Đợi cho animation hoàn thành
+        yield return new WaitForSeconds(animationDuration);
+
+        // Sau khi animation hoàn tất, hiển thị màn hình Game Over
+        gameManager.GameOver(); // Hiển thị Game Over Panel
+        gameObject.SetActive(false); // Tắt nhân vật
+    }
+
     private void Run()
     {
         Vector2 playerVelocity = new Vector2(moveInput.x * speed, rigidbody2d.linearVelocity.y);

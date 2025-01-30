@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: 91a4152caa966b147aaec00acd6316d5
+guid: 2ceb6d1c519916c4fb44a122215f01ad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -570807933488141205
-    second: SPA_Enemy_Right_0
+      213: -2572660309348051032
+    second: Bow and Arrows_0
   - first:
-      213: -7165589731514352205
-    second: SPA_Enemy_Right_1
+      213: 3298862418328315149
+    second: Bow and Arrows_1
   - first:
-      213: -8322909438818461173
-    second: SPA_Enemy_Right_2
+      213: -3696291076358396005
+    second: Bow and Arrows_2
   - first:
-      213: -6255873791086419314
-    second: SPA_Enemy_Right_3
+      213: 4948774720719412629
+    second: Bow and Arrows_3
   - first:
-      213: 8428840200775804847
-    second: SPA_Enemy_Right_4
-  - first:
-      213: -4694928931602649372
-    second: SPA_Enemy_Right_5
+      213: 3216016198144983771
+    second: Bow and Arrows_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 31
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SPA_Enemy_Right_0
+      name: Bow and Arrows_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 6
-        width: 26
-        height: 22
+        x: 3
+        y: 16
+        width: 11
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6ce67175351418f0800000000000000
-      internalID: -570807933488141205
+      spriteID: 8a7109544131c4cd0800000000000000
+      internalID: -2572660309348051032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPA_Enemy_Right_1
+      name: Bow and Arrows_1
       rect:
         serializedVersion: 2
-        x: 52
-        y: 6
-        width: 26
-        height: 20
+        x: 18
+        y: 32
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3bd76e6aa16be8c90800000000000000
-      internalID: -7165589731514352205
+      spriteID: d05685f24e9e7cd20800000000000000
+      internalID: 3298862418328315149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPA_Enemy_Right_2
+      name: Bow and Arrows_2
       rect:
         serializedVersion: 2
-        x: 90
-        y: 6
-        width: 26
-        height: 18
+        x: 32
+        y: 37
+        width: 16
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0ada7946f51f7c80800000000000000
-      internalID: -8322909438818461173
+      spriteID: b97263f89d224bcc0800000000000000
+      internalID: -3696291076358396005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPA_Enemy_Right_3
+      name: Bow and Arrows_3
       rect:
         serializedVersion: 2
-        x: 128
-        y: 8
-        width: 28
-        height: 26
+        x: 0
+        y: 5
+        width: 16
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e822e9a9eebae29a0800000000000000
-      internalID: -6255873791086419314
+      spriteID: 59dd9e583649da440800000000000000
+      internalID: 4948774720719412629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPA_Enemy_Right_4
+      name: Bow and Arrows_4
       rect:
         serializedVersion: 2
-        x: 166
-        y: 12
-        width: 28
-        height: 24
+        x: 16
+        y: 4
+        width: 32
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,30 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa726c3318149f470800000000000000
-      internalID: 8428840200775804847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SPA_Enemy_Right_5
-      rect:
-        serializedVersion: 2
-        x: 202
-        y: 6
-        width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4eeae12f20348deb0800000000000000
-      internalID: -4694928931602649372
+      spriteID: bd2855a61b591ac20800000000000000
+      internalID: 3216016198144983771
       vertices: []
       indices: 
       edges: []
@@ -250,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 07d0971b8ef26254085bb66be0d354f1
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SPA_Enemy_Right_0: -570807933488141205
-      SPA_Enemy_Right_1: -7165589731514352205
-      SPA_Enemy_Right_2: -8322909438818461173
-      SPA_Enemy_Right_3: -6255873791086419314
-      SPA_Enemy_Right_4: 8428840200775804847
-      SPA_Enemy_Right_5: -4694928931602649372
+      Bow and Arrows_0: -2572660309348051032
+      Bow and Arrows_1: 3298862418328315149
+      Bow and Arrows_2: -3696291076358396005
+      Bow and Arrows_3: 4948774720719412629
+      Bow and Arrows_4: 3216016198144983771
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

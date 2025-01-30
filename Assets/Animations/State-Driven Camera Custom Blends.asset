@@ -28,7 +28,7 @@ MonoBehaviour:
     To: Run Camera
     Blend:
       Style: 2
-      Time: 3
+      Time: 1
       CustomCurve:
         serializedVersion: 2
         m_Curve: []

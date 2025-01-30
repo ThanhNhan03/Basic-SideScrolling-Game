@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     CapsuleCollider2D capsuleCollider2D;
     BoxCollider2D myFeetCollider;
     GameManager gameManager;
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform firePoint;
 
     bool isAlive = true;
 
@@ -28,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (gameManager == null)
         {
-            gameManager = FindObjectOfType<GameManager>();
+            gameManager = FindAnyObjectByType<GameManager>();
         }
     }
 
@@ -39,6 +41,18 @@ public class PlayerMovement : MonoBehaviour
         ClimbLadder();
         SlipSprite();
         Die();
+    }
+
+    void OnAttack(InputValue value)
+    {
+        if (!isAlive) { return; }
+
+        if (value.isPressed)
+        {
+            Instantiate(bullet, firePoint.position, transform.rotation);
+            animator.SetTrigger("isAttack");
+            Debug.Log("Fire");
+        }
     }
 
     void OnMove(InputValue value)
@@ -59,6 +73,8 @@ public class PlayerMovement : MonoBehaviour
             rigidbody2d.linearVelocity = new Vector2(rigidbody2d.linearVelocity.x, jumpForce);
         }
     }
+
+    
 
     void Die()
     {

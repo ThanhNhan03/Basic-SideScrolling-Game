@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     CapsuleCollider2D capsuleCollider2D;
     BoxCollider2D myFeetCollider;
-    GameManager gameManager;
+    //GameManager gameManager;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform firePoint;
 
@@ -28,10 +28,10 @@ public class PlayerMovement : MonoBehaviour
         gravityScaleAtStart = rigidbody2d.gravityScale;
         myFeetCollider = GetComponent<BoxCollider2D>();
 
-        if (gameManager == null)
-        {
-            gameManager = FindAnyObjectByType<GameManager>();
-        }
+        //if (gameManager == null)
+        //{
+        //    gameManager = FindAnyObjectByType<GameManager>();
+        //}
     }
 
     void Update()
@@ -87,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
             // Chờ cho animation "isDying" hoàn thành trước khi game over
             StartCoroutine(PlayDeathAnimationAndShowGameOver());
+            FindFirstObjectByType<GameSession>().ProcessPlayerDeath();
         }
     }
 
@@ -99,8 +100,8 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(animationDuration);
 
         // Sau khi animation hoàn tất, hiển thị màn hình Game Over
-        gameManager.GameOver(); // Hiển thị Game Over Panel
-        gameObject.SetActive(false); // Tắt nhân vật
+        //gameManager.GameOver(); // Hiển thị Game Over Panel
+        //gameObject.SetActive(false); // Tắt nhân vật
     }
 
     private void Run()

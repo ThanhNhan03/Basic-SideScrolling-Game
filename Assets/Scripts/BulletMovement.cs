@@ -35,8 +35,24 @@ public class BulletMovement : MonoBehaviour
             {
                 enemyAnimator.SetTrigger("Die");
             }
-            Destroy(collision.gameObject, 0.5f); // Delay để animation chạy xong
+
+            // Vô hiệu hóa Collider và Rigidbody
+            Rigidbody2D enemyRigidbody = collision.GetComponent<Rigidbody2D>();
+            if (enemyRigidbody != null)
+            {
+                enemyRigidbody.simulated = false;
+            }
+
+            Collider2D enemyCollider = collision.GetComponent<Collider2D>();
+            if (enemyCollider != null)
+            {
+                enemyCollider.enabled = false;
+            }
+
+            Destroy(collision.gameObject, 0.5f);
         }
+
         Destroy(gameObject);
     }
+
 }

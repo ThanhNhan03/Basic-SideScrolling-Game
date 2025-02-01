@@ -33,6 +33,7 @@ public class BulletMovement : MonoBehaviour
             Animator enemyAnimator = collision.GetComponent<Animator>();
             if (enemyAnimator != null)
             {
+                FindAnyObjectByType<GameSession>().AddToScore(200);
                 enemyAnimator.SetTrigger("Die");
             }
 

@@ -13,18 +13,18 @@ public class LevelExit : MonoBehaviour
             StartCoroutine(LoadNextLevel());
         }
     }
-    private IEnumerator LoadNextLevel()
+    IEnumerator LoadNextLevel()
     {
-       
         yield return new WaitForSecondsRealtime(levelExitDelay);
-        var currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextLevelIndex = currentLevelIndex + 1;
-        if (nextLevelIndex == SceneManager.sceneCountInBuildSettings)
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
         {
-            nextLevelIndex = 0;
+            nextSceneIndex = 0;
         }
-        SceneManager.LoadScene(nextLevelIndex);
-        //Load the next level
-        Debug.Log("Loading next level");
+
+        FindObjectOfType<ScenePersist>().DestroyScenePersist();
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }
